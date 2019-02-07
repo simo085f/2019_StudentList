@@ -1,8 +1,8 @@
 body {
-  background-color: aliceblue;
+  background-image: url(background1.jpg);
 }
 
-.Gryffindor {
+/*.Gryffindor {
   background-color: #ce3a0a;
   color: #fdb02e;
   width: 10px;
@@ -22,12 +22,13 @@ body {
 .Slytherin {
   background-color: #588c39;
   color: #c0b1c6;
-}
+}*/
 
 nav {
   width: 30%;
 }
 
+/*menuen*/
 .menu_item,
 .sorter_item {
   padding: 0px 5px 5px 30px;
@@ -58,23 +59,26 @@ nav {
   background-color: #eee;
 }
 
+/* ved hover skal der være en grå baggrund*/
 .menu_item:hover input ~ .check,
 .sorter_item:hover input ~ .check {
   background-color: gray;
 }
 
-/* Indiker når der er tjekket af*/
+/* Når der er checked af skal den skifte baggrund*/
 .menu_item input:checked ~ .check,
 .sorter_item input:checked ~ .check {
   background-color: lightblue;
 }
 
+/*Selve check mærket gemmes når der ikke er klikket*/
 .check:after {
   content: "";
   position: absolute;
   display: none;
 }
 
+/* Vis check mærket, når der er checket af*/
 .menu_item input:checked ~ .check:after,
 .sorter_item input:checked ~ .check:after {
   display: block;

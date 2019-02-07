@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student List 2</title>
-    <link rel="stylesheet" href="studentlist.css" type="text/css">
-</head>
-<body>
-  <h1>Students 1991</h1>
-    
-  <script src="studentlist.js"></script>
-</body>
+    <link rel="stylesheet" href="studentlist.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Students 1991</h1>
+    </header>
+
+    <nav>
+      <div id="filtrer">
+        <div class="menu_item" data-kategori="alle">Alle</div>
+        <div class="menu_item" data-kategori="Ravenclaw">Ravenclaw</div>
+        <div class="menu_item" data-kategori="Hufflepuff">Hufflepuff</div>
+        <div class="menu_item" data-kategori="Gryffindor">Gryffindor</div>
+        <div class="menu_item" data-kategori="Slytherin">Slytherin</div>
+      </div>
+      <div id="sorter">
+        <div class="sorter_item" sorter-kategori="firstname">Firstname</div>
+        <div class="sorter_item" sorter-kategori="lastname">Lastname</div>
+        <div class="sorter_item" sorter-kategori="house">House</div>
+      </div>
+    </nav>
+
+    <section id="modal">
+      <div id="modal-content">
+        <button>X</button>
+        <h2 class="modal-navn"></h2>
+        <img class="modal-billede" src="" alt="" />
+        <div class="beskrivelse"></div>
+      </div>
+    </section>
+
+    <main>
+      <section class="studerende"></section>
+      <template class="stud-template">
+        <article class="stud-container">
+          <div class="navn"></div>
+          <div class="house"></div>
+        </article>
+      </template>
+    </main>
+
+    <script src="studentlist.js"></script>
+  </body>
 </html>

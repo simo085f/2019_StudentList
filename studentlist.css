@@ -1,23 +1,92 @@
 body {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
-.gryffindor {
-    background-color: #ce3a0a;
-    color: #fdb02e
+.Gryffindor {
+  background-color: #ce3a0a;
+  color: #fdb02e;
+  width: 10px;
+  height: 10px;
 }
 
-.hufflepuf {
-    background-color: #ffc02a;
-    color: #0b0000  
+.Hufflepuff {
+  background-color: #ffc02a;
+  color: #0b0000;
 }
 
-.ravenclaw {
-    background-color: #395f9d;
-    color: #e9ba36  
+.Ravenclaw {
+  background-color: #395f9d;
+  color: #e9ba36;
 }
 
-.slytherin {
-    background-color: #588c39;
-    color: #c0b1c6  
+.Slytherin {
+  background-color: #588c39;
+  color: #c0b1c6;
+}
+
+nav {
+  width: 30%;
+}
+
+.menu_item,
+.sorter_item {
+  padding: 0px 5px 5px 30px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+/*Gem browserens automatiske checkbox*/
+.menu_item input,
+.sorter_item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Style til selve checkboxen*/
+.check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+.menu_item:hover input ~ .check,
+.sorter_item:hover input ~ .check {
+  background-color: gray;
+}
+
+/* Indiker når der er tjekket af*/
+.menu_item input:checked ~ .check,
+.sorter_item input:checked ~ .check {
+  background-color: lightblue;
+}
+
+.check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.menu_item input:checked ~ .check:after,
+.sorter_item input:checked ~ .check:after {
+  display: block;
+}
+
+.menu_item .check:after,
+.sorter_item .check:after {
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }

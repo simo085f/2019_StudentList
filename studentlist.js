@@ -1,37 +1,57 @@
-"use strict";
+document.addEventListener("DOMContentLoaded", getJson);
 
-window.addEventListener("DOMContentLoaded", init);
+let alleStud;
+let studTemplate = document.querySelector(".stud-template");
+let studContainer = document.querySelector(".studerende");
+let modal = document.querySelector("#modal");
 
-function init() {
-  console.log("init");
+houseFilter = "alle";
 
-  // TODO: Load JSON, create clones, build list, add event listeners, show modal, find images, and other stuff ...
-  getJSON();
+async function getJson() {
+  let jsonData = await fetch("http://petlatkea.dk/2019/students1991.json");
+  alleStud = await jsonData.json();
+
+  visStud();
 }
 
-function getJSON() {
-  console.log("getJSON");
+//Når der klikkes på et af menu_item skal function filtreringen starte
+document.querySelectorAll(".menu_item").forEach(knap => {
+  knap.addEventListener("click", filtrering);
+});
 
-  // NOTE: Maybe also call sortByFirst the first time ... Investigate!
-  filterList();
+function filtrering() {
+  //Produkterne bliver indelt i deres kategorier så de bliver filtreret og vist
+  studContainer.textContent = "";
+  houseFilter = this.getAttribute("data-kategori");
+  visStud();
 }
 
-function filterList() {
-  console.log("filterList");
+function visStud() {
+  alleStud.forEach(navn => {
+    if (houseFilter == navn.house) {
+      console.log("hej");
+      udskriv();
+    } else if (houseFilter == "alle") {
+      udskriv();
+    }
 
-  displayList();
+    function udskriv() {
+      console.log(houseFilter + navn.house);
+      //Det content som hentes fra json filen og vises
+      let klon = studTemplate.cloneNode(true).content;
+      klon.querySelector(".navn").textContent = navn.fullname;
+      klon.querySelector(".house").textContent = navn.house;
+      klon.querySelector(".navn").addEventListener("click", () => {
+        visModal(elev);
+      });
+
+      //Placer klonen i HTML
+      studContainer.appendChild(klon);
+    }
+  });
 }
-
-function displayList() {
-  console.log("displayList");
-}
-
 // TODO: Create scaffolding functions for the rest!
 
-function clickSortByFirst() {
+function clickSortByFirst() {}
 
-}
-
-function sortListByFirst() {
-
-}
+function sortListByFirst() {}

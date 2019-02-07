@@ -1,7 +1,15 @@
 body {
-  background-image: url(background1.jpg);
+  background-image: url(background3.jpg);
+  image
 }
 
+article {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px;
+  border: 1px solid black;
+}
 /*.Gryffindor {
   background-color: #ce3a0a;
   color: #fdb02e;
@@ -25,18 +33,37 @@ body {
 }*/
 
 nav {
-  width: 30%;
+  width: 170px;
+  background-color: white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+
 }
 
 /*menuen*/
 .menu_item,
 .sorter_item {
-  padding: 0px 5px 5px 30px;
+  padding: 0px 5px 5px 35px;
   display: block;
   position: relative;
   cursor: pointer;
   font-size: 18px;
   user-select: none;
+  
+}
+
+#filtrer h3{
+  margin-top: 0px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  padding: 5px;
+}
+
+#sorter h3{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  padding: 5px;
 }
 
 /*Gem browserens automatiske checkbox*/
@@ -53,7 +80,7 @@ nav {
 .check {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 5px;
   height: 20px;
   width: 20px;
   background-color: #eee;

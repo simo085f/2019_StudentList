@@ -1,6 +1,5 @@
 body {
   background-image: url(background3.jpg);
-  image
 }
 
 article {
@@ -38,7 +37,6 @@ nav {
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-
 }
 
 /*menuen*/
@@ -50,17 +48,16 @@ nav {
   cursor: pointer;
   font-size: 18px;
   user-select: none;
-  
 }
 
-#filtrer h3{
+#filtrer h3 {
   margin-top: 0px;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   padding: 5px;
 }
 
-#sorter h3{
+#sorter h3 {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   padding: 5px;

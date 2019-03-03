@@ -179,6 +179,11 @@ article {
   font-size: 1.6em;
 }
 
+.bloodstatus {
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.2em;
+}
+
 .remove {
   width: 95%;
   height: 6vw;

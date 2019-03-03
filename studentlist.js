@@ -20,7 +20,8 @@ const prototype = {
   fullname: "-fullname-",
   firstname: "-firstname-",
   lastname: "-lastname-",
-  house: "-house-"
+  house: "-house-",
+  blood: "-blood-"
 };
 
 function init() {
@@ -85,10 +86,11 @@ function prepareObjects(jsonStuderende) {
     fullname: "Simone Grauer",
     firstname: "Simone",
     lastname: "Grauer",
-
+    blood: "pure-blood",
     house: "Gryffindor"
   };
   arrayOfStudents.push(myInfo);
+  bloodStatus();
   filterList();
 
   console.log(arrayOfStudents);
@@ -214,6 +216,7 @@ function displayList(liste) {
     klon.querySelector(".navn").textContent =
       person.firstname + " " + person.lastname;
     klon.querySelector(".house").textContent = person.house;
+    klon.querySelector(".bloodstatus").textContent = person.blood;
     klon.querySelector(".remove").dataset.id = person.firstname;
     console.log(klon.querySelector(".remove").dataset.id);
     klon.querySelector(".remove").addEventListener("click", function() {
@@ -254,6 +257,7 @@ function visModal(eleven) {
     eleven.firstname + " " + eleven.lastname;
   modal.querySelector(".modal-house").textContent = eleven.house;
   modal.querySelector(".modal-img").src = "images/" + imageName;
+  modal.querySelector(".modal-bloodstatus").textContent = eleven.blood;
   modal.querySelector("button").addEventListener("click", skjulModal);
   if (eleven.house === "Gryffindor") {
     document.querySelector("#modal-content").classList.add("gryffindor");
@@ -304,4 +308,23 @@ function removeStudent(student) {
 function skjuladvarsel() {
   document.querySelector(".show").style.display = "none";
   console.log(skjuladvarsel);
+}
+
+function bloodStatus() {
+  activeArray.forEach(elev => {
+    bloodStuderende.half.forEach(name => {
+      if (name === elev.lastname) {
+        elev.blood = "Half blood";
+      }
+    });
+    bloodStuderende.pure.forEach(name => {
+      //https://www.w3schools.com/js/js_comparisons.asp && i stedet for ==
+      if ((name === elev.lastname && elev.blood) === "-blood-") {
+        elev.blood = "Pure blood";
+      }
+    });
+    if (elev.blood === "-blood-") {
+      elev.blood = "Muggle blood";
+    }
+  });
 }

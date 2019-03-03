@@ -86,7 +86,7 @@ function prepareObjects(jsonStuderende) {
     fullname: "Simone Grauer",
     firstname: "Simone",
     lastname: "Grauer",
-    blood: "pure-blood",
+    blood: "pure blood",
     house: "Gryffindor"
   };
   arrayOfStudents.push(myInfo);

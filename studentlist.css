@@ -18,7 +18,7 @@ nav {
   border-bottom: 2px solid black;
   font-family: "IM Fell English SC", serif;
   margin-bottom: 20px;
-  margin-left: 37px;
+  margin-left: 41px;
 }
 
 /*menuen*/
@@ -304,7 +304,8 @@ button:hover {
     margin-left: 60px;
   }
   .remove {
-    width: 236px;
+    /*width: 236px;*/
+    width: 96.6%;
     font-size: 1.3em;
     padding-top: 8px;
   }
@@ -348,7 +349,8 @@ button:hover {
   }
 
   .remove {
-    width: 203px;
+    /* width: 203px;*/
+    width: 96.3%;
     height: 30px;
   }
 
@@ -368,18 +370,20 @@ button:hover {
     grid-template-columns: 1fr 1fr 1fr;
   }
   main {
-    grid-template-columns: 15% 80%;
+    grid-template-columns: 10% 90%;
   }
 
   #modal-content {
     width: 800px;
+    margin-left: 100px;
   }
 
   .no {
     width: 800px;
+    margin-left: 100px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .studerende {
     width: 80%;
     grid-gap: 20px;
@@ -393,7 +397,8 @@ button:hover {
   }
 
   .remove {
-    width: 253px;
+    /* width: 253px;*/
+    width: 96.6%;
   }
 
   #modal-content {
@@ -402,5 +407,38 @@ button:hover {
 
   .no {
     margin-left: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .remove {
+    width: 96.8%;
+  }
+  .studerende {
+    width: 80%;
+    grid-gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .remove {
+    width: 97.7%;
+  }
+
+  nav {
+    width: 250px;
+  }
+
+  main {
+    grid-template-columns: 10% 90%;
+    grid-gap: 70px;
+  }
+
+  #modal-content {
+    margin-left: 400px;
+  }
+
+  .no {
+    margin-left: 400px;
   }
 }

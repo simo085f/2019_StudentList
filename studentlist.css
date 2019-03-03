@@ -1,89 +1,24 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  background-image: url(background3.jpg);
-  background-position: cover;
-  background-repeat: repeat;
-  background-size: 100%;
-  width: 100%;
-  margin: 0 auto;
+  margin: 0;
+  background-color: antiquewhite;
 }
-
-main {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  margin-left: 140px;
-  margin-right: 140px;
-}
-
-article {
-  border: 2px solid black;
-  width: 100%;
-  height: 200px;
-  text-align: center;
-}
-
-.navn {
-  font-family: "IM Fell English SC", serif;
-  font-size: 1.8em;
-  padding: 20px;
-  font-weight: 600;
-}
-
-.house {
-  font-family: "IM Fell English SC", serif;
-  font-size: 1.6em;
-}
-
 h1 {
   font-family: "IM Fell English SC", serif;
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
   font-weight: 600;
-}
-
-.studerende {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px;
-}
-
-.stud-container {
-  cursor: pointer;
-}
-
-.Gryffindor {
-  background-color: #ce3a0a;
-  color: #fdb02e;
-  width: 10px;
-  height: 10px;
-}
-
-.Hufflepuff {
-  background-color: #ffc02a;
-  color: #0b0000;
-}
-
-.Ravenclaw {
-  background-color: #395f9d;
-  color: #e9ba36;
-}
-
-.Slytherin {
-  background-color: #588c39;
-  color: #c0b1c6;
 }
 
 nav {
-  width: 200px;
+  width: 81.5%;
   height: 350px;
   background-color: rgb(255, 235, 209);
   border-left: 2px solid black;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   font-family: "IM Fell English SC", serif;
+  margin-bottom: 20px;
+  margin-left: 37px;
 }
 
 /*menuen*/
@@ -216,7 +151,53 @@ nav {
   transform: rotate(45deg);
 }
 
-/* styling af modal vinduet*/
+.studerende {
+  display: grid;
+  margin: 0 auto;
+  padding-left: 10%;
+  padding-right: 10%;
+  grid-gap: 10px;
+  grid-template-columns: 50% 50%;
+  width: 80%;
+}
+
+article {
+  border: 2px solid black;
+  height: 200px;
+  text-align: center;
+}
+
+.navn {
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.5em;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.house {
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.6em;
+}
+
+.remove {
+  width: 95%;
+  height: 6vw;
+  color: white;
+  background-color: black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  font-family: "IM Fell English SC", serif;
+  font-size: 0.9em;
+  padding: 2px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.remove:hover {
+  color: black;
+  background-color: white;
+}
 
 #modal {
   width: 600px;
@@ -232,15 +213,13 @@ nav {
 }
 
 #modal-content {
-  width: 600px;
+  width: 300px;
   height: 400px;
-  /*background-color: rgba(250, 250, 250, 1);*/
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 30px;
   margin-top: 100px;
   font-family: "IM Fell English SC", serif;
   font-size: 1.6em;
-  border: 8px solid antiquewhite;
+  border: 8px solid black;
 }
 
 #modal.vis {
@@ -249,6 +228,31 @@ nav {
   pointer-events: all;
 }
 
+.no {
+  width: 300px;
+  height: 400px;
+  position: fixed;
+  z-index: 19;
+  background-color: pink;
+  text-align: center;
+  display: none;
+  transition: 1;
+  pointer-events: none;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.6em;
+  border: 8px solid black;
+  margin-left: 30px;
+  margin-top: 100px;
+}
+
+.no.show {
+  display: block;
+  transition: 0.5s;
+  pointer-events: all;
+}
+.luk {
+  margin-top: -32px;
+}
 button {
   background-color: white;
   margin: 0;
@@ -268,6 +272,130 @@ button:hover {
   transition: 1s;
 }
 
-/*[modal-content~="Ravenclaw"] 
-  background-color: red;
-}*/
+.gryffindor {
+  background-color: #ce3a0a;
+  color: #fdb02e;
+  width: 10px;
+  height: 10px;
+}
+
+.hufflepuff {
+  background-color: #ffc02a;
+  color: #0b0000;
+}
+
+.ravenclaw {
+  background-color: #395f9d;
+  color: #e9ba36;
+}
+
+.slytherin {
+  background-color: #588c39;
+  color: #c0b1c6;
+}
+
+@media screen and (min-width: 627px) {
+  nav {
+    margin-left: 60px;
+  }
+  .remove {
+    width: 236px;
+    font-size: 1.3em;
+    padding-top: 8px;
+  }
+
+  .no {
+    width: 430px;
+    margin-left: 100px;
+  }
+
+  .luk {
+    margin-top: -32px;
+  }
+
+  .navn {
+    font-size: 1.8em;
+  }
+
+  .house {
+    font-size: 1.7em;
+  }
+
+  #modal-content {
+    width: 500px;
+    margin-left: 52px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    width: 160px;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 30px;
+  }
+
+  .studerende {
+    width: 70%;
+    grid-gap: 10px;
+  }
+
+  .remove {
+    width: 203px;
+    height: 30px;
+  }
+
+  .no {
+    width: 550px;
+    margin-left: 100px;
+  }
+
+  #modal-content {
+    width: 550px;
+    margin-left: 100px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .studerende {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  main {
+    grid-template-columns: 15% 80%;
+  }
+
+  #modal-content {
+    width: 800px;
+  }
+
+  .no {
+    width: 800px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .studerende {
+    width: 80%;
+    grid-gap: 20px;
+  }
+  main {
+    grid-template-columns: 15% 85%;
+  }
+
+  nav {
+    width: 200px;
+  }
+
+  .remove {
+    width: 253px;
+  }
+
+  #modal-content {
+    margin-left: 200px;
+  }
+
+  .no {
+    margin-left: 200px;
+  }
+}
